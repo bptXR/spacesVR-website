@@ -1,23 +1,19 @@
-import { Spinning, Floating, StandardReality } from "spacesvr";
+import { Spinning, Floating, StandardReality, Model } from "spacesvr";
 import TransparentFloor from "ideas/TransparentFloor";
 import CloudySky from "ideas/CloudySky";
+import {Sky, Cloud} from "@react-three/drei";
 
 export default function Starter() {
   return (
     <StandardReality>
-      <ambientLight />
-      <group position={[0, 0, -4]}>
-        <Floating>
-          <Spinning xSpeed={0.2} ySpeed={0.4} zSpeed={0.3}>
-            <mesh>
-              <torusKnotBufferGeometry args={[1, 0.2]} />
-              <meshStandardMaterial color="blue" />
-            </mesh>
-          </Spinning>
-        </Floating>
-      </group>
-      <CloudySky color="white" />
+      <ambientLight intensity={4}/>
+      <Model scale={0.007} position-y = {0.01} rotation-x={-Math.PI/2} src = "./vrShowcase.glb"></Model>
+      <Spinning ySpeed={1.5}>
+      <Model scale={0.09} position-y={0.9} position-z={-0.03} src="./react_logo.glb"></Model>
+      </Spinning>
       <TransparentFloor opacity={0.7} />
+      <Sky sunPosition={[0,1,0]}></Sky>
+      <Cloud position-y={15}></Cloud>
     </StandardReality>
   );
 }
