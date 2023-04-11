@@ -1,6 +1,5 @@
-import { Spinning, Floating, StandardReality, Model, Interactable } from "spacesvr";
+import { Spinning, StandardReality, Model, Interactable } from "spacesvr";
 import TransparentFloor from "ideas/TransparentFloor";
-import CloudySky from "ideas/CloudySky";
 import {Sky, Cloud} from "@react-three/drei";
 
 export default function Starter() {
@@ -8,7 +7,7 @@ export default function Starter() {
     <StandardReality playerProps={{
       pos: [0,1,1]
     }}>
-      <ambientLight intensity={4}/>
+      <ambientLight/>
       <Model scale={0.007} position-y = {0.01} rotation-x={-Math.PI/2} src = "./vrShowcase.glb"></Model>
       <Spinning ySpeed={1.5}>
         <Interactable onClick={() => window.open("https://docs.pmnd.rs/react-three-fiber/getting-started/introduction!")}>
