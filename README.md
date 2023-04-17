@@ -8,13 +8,11 @@ A starter repository to quickly start building using [spacesvr](https://github.c
 
 ### \> how to use
 
-clone this repo, then install packages using `yarn install`
+clone this repo, then install packages using `npm install`
 
 ### \> scripts
 
-- use `yarn dev` to start a local development server
-- use `yarn start` to start a local production server
-- use `yarn build` to export the site to static files
+- use `npm run dev` to start a local development server
 
 ### \> features
 
